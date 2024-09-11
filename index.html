@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>HCSD-DEV</title>
+</head>
+
+<body>
+    <header>
+        <h1>HCSD-DEV Controle de Estoque e Composição</h1>
+    </header>
+    <main>
+        <!-- cria artigo na artigosDB -->
+        <section>
+            <h2>Criar Artigo no Banco de Dados</h2>
+            <form id="formArtigo">
+                <label for="nomeArtigo">Nome do Artigo:</label>
+                <input type="text" id="nomeArtigo" name="nomeArtigo" required>
+
+                <label for="descricaoArtigo">Descrição:</label>
+                <textarea id="descricaoArtigo" name="descricaoArtigo" required></textarea>
+
+                <label for="quantidadeEstoque">Quantidade do Artigo em estoque:</label>
+                <input type="number" id="quantidadeEstoque" name="quantidadeEstoque" required class="inputNumber">
+
+                <button type="submit">Criar</button>
+                <div id="mensagem"></div>
+            </form>
+        </section>
+
+
+        <section>
+            <h2>Artigos em Estoque</h2>
+            <table id="artigosDB">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Artigo</h2>
+            <table id="artigosDB">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody id="artigoAtivo">
+                </tbody>
+            </table>
+            <h2 class="h2Short">Descrição</h2>
+            <p id="descricao">
+
+            </p>
+            <h2 class="h2Short">Composição</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody id="listaComposicao">
+                </tbody>
+            </table>
+            <h2 class="h2Short">Adicionar/Remover componente</h2>
+            <form id="formComp">
+                <label for="nomeArtigo">ID:</label>
+                <input type="text" id="idArtigo" name="idArtigo" required>
+
+                <label for="quantidadeComp">Quantidade:</label>
+                <input type="number" id="quantidadeComp" name="quantidadeComp" required class="inputNumber">
+
+                <button id="add" type="submit" class="add">Adicionar</button>
+                <div id="mensagemAdd"></div>
+                <button id="sub" type="submit" class="sub">Remover</button>
+                <div id="mensagemRemove"></div>
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        <p>2024 - Artigos em Estoque. Todos os direitos reservados</p>
+        <p>Entre em contato pelo email: project@heryson-dantas.dev</p>
+    </footer>
+    <script src="dados.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
